@@ -26,11 +26,13 @@ plugins {
 
 val koofreeProjectGroup: String by project
 val koofreeProjectVersion: String by project
-val koofreePomDeveloperId: String by project
-val koofreePomDeveloperName: String by project
-val koofreePomDeveloperEmail: String by project
+val koofreeDeveloperId: String by project
+val koofreeDeveloperName: String by project
+val koofreeDeveloperEmail: String by project
 val koofreeLicenseName: String by project
 val koofreeLicenseUrl: String by project
+val koofreeGithubUsername: String by project
+val koofreeGithubRepository: String by project
 val javaVersion: Int by project
 
 configure<io.spring.gradle.dependencymanagement.dsl.DependencyManagementExtension> {
@@ -105,6 +107,17 @@ tasks {
 }
 
 publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            credentials {
+                username = project.findProperty("gpr.user") as? String ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") as? String ?: System.getenv("TOKEN")
+            }
+            url = uri("https://maven.pkg.github.com/$koofreeGithubRepository")
+        }
+    }
+
     publications {
         create<MavenPublication>("maven") {
             groupId = project.group as String
@@ -123,9 +136,9 @@ publishing {
                 }
                 developers {
                     developer {
-                        id.set(koofreePomDeveloperId)
-                        name.set(koofreePomDeveloperName)
-                        email.set(koofreePomDeveloperEmail)
+                        id.set(koofreeDeveloperId)
+                        name.set(koofreeDeveloperName)
+                        email.set(koofreeDeveloperEmail)
                     }
                 }
             }

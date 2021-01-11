@@ -3,11 +3,12 @@ koofree:
   project:
     group: com.koofree
     version: 0.0.1
-  pom:
-    developer:
-      id: koofree
-      name: Koo Lee
-      email: koo@koofree.com
+  developer:
+    id: koofree
+    name: Koo Lee
+    email: koo@koofree.com
+  github:
+    repository: koofree/spring-server-starter
   license:
     name: The Apache License, Version 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.txt
