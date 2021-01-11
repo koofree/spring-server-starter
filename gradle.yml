@@ -1,0 +1,27 @@
+# Koofree project custom fields.
+koofree:
+  project:
+    group: com.koofree
+    version: 0.0.1
+  pom:
+    developer:
+      id: koofree
+      name: Koo Lee
+      email: koo@koofree.com
+  license:
+    name: The Apache License, Version 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.txt
+
+# Kotlin
+kotlin:
+  code:
+    style: ofiicial
+
+# Java
+java:
+  version: 11
+
+# Spring framework
+spring:
+  boot:
+    version: 2.4.1
