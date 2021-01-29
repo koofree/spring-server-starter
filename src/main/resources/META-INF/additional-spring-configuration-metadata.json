@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "com.koofree.security.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Description for com.koofree.security.enabled."
+    }
+  ]
+}

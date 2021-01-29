@@ -2,7 +2,7 @@
 koofree:
   project:
     group: com.koofree
-    version: 0.0.1
+    version: 0.0.2-SNAPSHOT
   developer:
     id: koofree
     name: Koo Lee

@@ -1,5 +1,6 @@
 package com.koofree.security
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.http.HttpMethod
@@ -26,6 +27,12 @@ import reactor.core.publisher.Mono
 @EnableWebFluxSecurity
 @EnableReactiveMethodSecurity
 @ComponentScan("com.koofree.security")
+@ConditionalOnProperty(
+    prefix = "com.koofree.security",
+    name = ["enabled"],
+    havingValue = "true",
+    matchIfMissing = true
+)
 class SecurityConfiguration(
     private val serverAuthenticationSuccessHandler: ServerAuthenticationSuccessHandler,
     private val serverAuthenticationFailureHandler: ServerAuthenticationFailureHandler,
